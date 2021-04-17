@@ -1,4 +1,4 @@
-package com.jaksa.springapp.models;
+package com.jaksa.springapp.datamodels;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,8 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 public class Book {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String author;

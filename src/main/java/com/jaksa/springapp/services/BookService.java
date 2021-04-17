@@ -1,6 +1,6 @@
 package com.jaksa.springapp.services;
 
-import com.jaksa.springapp.models.Book;
+import com.jaksa.springapp.datamodels.Book;
 import com.jaksa.springapp.exceptions.BookNotFoundException;
 import com.jaksa.springapp.repositories.BookRepository;
 import lombok.AllArgsConstructor;

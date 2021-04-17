@@ -1,4 +1,4 @@
-package com.jaksa.springapp.models;
+package com.jaksa.springapp.datamodels;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +22,10 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private String role;
-
+    private boolean accountNonExpired = true;
+    private boolean accountNonLocked = true;
+    private boolean credentialsNonExpired = true;
+    private boolean enabled = true;
 
     public User(String username, String password, String role) {
         this.username = username;
@@ -37,21 +40,22 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return accountNonExpired;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return accountNonLocked;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return credentialsNonExpired;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return enabled;
     }
 }
+

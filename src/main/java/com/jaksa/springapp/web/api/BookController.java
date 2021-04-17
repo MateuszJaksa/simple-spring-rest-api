@@ -3,17 +3,14 @@ package com.jaksa.springapp.web.api;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 import com.jaksa.springapp.datatransfer.BookModelAssembler;
-import com.jaksa.springapp.datatransfer.UserDTO;
-import com.jaksa.springapp.models.Book;
+import com.jaksa.springapp.datamodels.Book;
 import com.jaksa.springapp.services.BookService;
 import lombok.AllArgsConstructor;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,25 +35,19 @@ public class BookController {
     }
 
     @PostMapping("/books")
-    public Book addBook(@RequestBody Book book) {
-        return bookService.save(book);
+    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+
+        return new ResponseEntity<>(bookService.save(book), HttpStatus.CREATED);
     }
 
     @PutMapping("/books/{id}")
-    public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
-        return bookService.update(id, book);
+    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book book) {
+        return new ResponseEntity<>(bookService.update(id, book), HttpStatus.OK);
     }
 
     @DeleteMapping("/books/{id}")
     public ResponseEntity<?> deleteBook(@PathVariable Long id) {
         bookService.deleteById(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @GetMapping("/user/registration")
-    public String showRegistrationForm(WebRequest request, Model model) {
-        UserDTO userDto = new UserDTO();
-        model.addAttribute("user", userDto);
-        return "registration";
     }
 }

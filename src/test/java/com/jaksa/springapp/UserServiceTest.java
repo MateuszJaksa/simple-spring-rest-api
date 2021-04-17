@@ -1,7 +1,7 @@
 package com.jaksa.springapp;
 
 import com.jaksa.springapp.exceptions.UserNotFoundException;
-import com.jaksa.springapp.models.User;
+import com.jaksa.springapp.datamodels.User;
 import com.jaksa.springapp.repositories.UserRepository;
 import com.jaksa.springapp.services.UserService;
 import org.junit.Assert;

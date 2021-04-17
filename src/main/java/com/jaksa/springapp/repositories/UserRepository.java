@@ -1,6 +1,6 @@
 package com.jaksa.springapp.repositories;
 
-import com.jaksa.springapp.models.User;
+import com.jaksa.springapp.datamodels.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -2,7 +2,7 @@ package com.jaksa.springapp.datatransfer;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-import com.jaksa.springapp.models.Book;
+import com.jaksa.springapp.datamodels.Book;
 import com.jaksa.springapp.web.api.BookController;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;

@@ -7,9 +7,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jaksa.springapp.datatransfer.BookModelAssembler;
 import com.jaksa.springapp.exceptions.BookNotFoundException;
-import com.jaksa.springapp.models.Book;
+import com.jaksa.springapp.datamodels.Book;
 import com.jaksa.springapp.services.BookService;
 import org.junit.Before;
 import org.junit.Test;
@@ -96,7 +95,7 @@ public class BookControlerTest {
         this.mockMvc.perform(post("/books").with(csrf())
             .content(custJson)
             .contentType(MEDIA_TYPE_JSON_UTF8))
-            .andExpect(status().isOk());
+            .andExpect(status().isCreated());
     }
 
     @Test

@@ -4,7 +4,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.jaksa.springapp.exceptions.BookNotFoundException;
-import com.jaksa.springapp.models.Book;
+import com.jaksa.springapp.datamodels.Book;
 import com.jaksa.springapp.repositories.BookRepository;
 import com.jaksa.springapp.services.BookService;
 import org.junit.Assert;

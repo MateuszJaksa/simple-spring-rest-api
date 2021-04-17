@@ -1,23 +1,22 @@
 package com.jaksa.springapp.datatransfer;
 
-
 import com.jaksa.springapp.annotations.PasswordMatches;
 import com.jaksa.springapp.annotations.ValidEmail;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-@Data
+@Setter
+@Getter
+@AllArgsConstructor
 @PasswordMatches
 public class UserDTO {
     @NotNull
     @NotEmpty
-    private String firstName;
-
-    @NotNull
-    @NotEmpty
-    private String lastName;
+    private String username;
 
     @NotNull
     @NotEmpty
